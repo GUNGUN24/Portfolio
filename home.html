@@ -5,10 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GUNGUN GUNGUN - Software Development Engineer</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('come-in');
+            }
+            });
+        }, { threshold: [0.5] }); // Trigger when half of the item is visible
 
+        const items = document.querySelectorAll('.entry');
+        items.forEach(item => {
+            observer.observe(item);
+        });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        let currentFocusedCard = null; // Keep track of the currently focused card
+
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && currentFocusedCard !== entry.target) {
+                    if (currentFocusedCard) {
+                        // Scale down the previously focused card
+                        currentFocusedCard.classList.remove('focus');
+                    }
+                    // Scale up the new focused card
+                    entry.target.classList.add('focus');
+                    currentFocusedCard = entry.target;
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Optional: Observer to scale down the last focused card when scrolling back up
+        const resetObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting && entry.target === currentFocusedCard) {
+                    entry.target.classList.remove('focus');
+                    currentFocusedCard = null;
+                }
+            });
+        }, { rootMargin: "100px" });
+
+        resetObserver.observe(document.querySelector('.project-card:last-child'));
+    });
+
+</script>
 <body>
     
     <header>
@@ -154,9 +211,23 @@
 
         <section id="experience">
             <div class="container">
+                <h2> My Experience</h2> <br>
                 <div class="timeline">
+                    
                     <div class = "entry">
                     <div class="entry1">
+                      <div class="title">June 2021 – December 2021</div>
+                      <div class="content">
+                        <h3>Software Development Engineer Intern</h3>
+                        <h4>BLOKMINERS - Internship</h4>
+                        <p>Developed and implemented data pipelines using Python and SQL to automate data ingestion and
+                            processing tasks. Designed and created database schemas to store and organize data efficiently.</p>
+                      </div>
+                      <div class="arrow-left"></div>
+                    </div>
+                </div>
+                <div class = "entry">
+                    <div class="entry2">
                       <div class="title">January 2022 – July 2022</div>
                       <div class="content">
                         <h3>Database Engineer</h3>
@@ -169,49 +240,100 @@
                       <div class="arrow-right"></div>
                     </div>
                 </div>
-                    <div class = "entry">
-                    <div class="entry2">
-                      <div class="title">June 2021 – December 2021</div>
-                      <div class="content">
-                        <h3>Software Development Engineer Intern</h3>
-                        <h4>BLOKMINERS - Internship</h4>
-                        <p>Developed and implemented data pipelines using Python and SQL to automate data ingestion and
-                            processing tasks. Designed and created database schemas to store and organize data efficiently.</p>
-                      </div>
-                      <div class="arrow-left"></div>
-                    </div>
-                </div>
                   </div>
                 
             </div>
         </section>
-        
-        
-        
              
         <section id="skills">
             <div class="container">
                 <h2>Technical Skills</h2>
-                <ul>
-                    <li>Programming Languages: C++, Python, SQL, C, Java</li>
-                    <li>Object Oriented Programming</li>
-                    <li>Data Structures and Algorithms (Array, Linked List, Stack, Queue)</li>
-                    <li>Operating System: Linux, AWS (Familiar with)</li>
-                    <li>Web Development and Web Design: HTML, CSS, UI/UX</li>
-                    <li>Databases: MySQL, PostgreSQL, Oracle, PL/SQL</li>
-                </ul>
+                <div class="skills-container">
+                    <div class="skill">
+                        <img src="skills/c-.png" alt="C++">
+                        <p>C++</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/python.png" alt="Python">
+                        <p>Python</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/letter-c.png" alt="C">
+                        <p>C</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/java.png" alt="Java">
+                        <p>Java</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/linux.png" alt="Linux">
+                        <p>Linux</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/html.png" alt="HTML">
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/css-3.png" alt="CSS">
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/java-script.png" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/ui-ux.png" alt="UI/UX">
+                        <p>UI/UX</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/mysql.png" alt="MySQL">
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/postgre.png" alt="PostgreSQL">
+                        <p>PostgreSQL</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/database-table.png" alt="PL/SQL">
+                        <p>PL/SQL</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/file.png" alt="Perl">
+                        <p>Perl</p>
+                    </div>
+                    <div class="skill">
+                        <img src="skills/ruby.png" alt="Ruby">
+                        <p>Ruby</p>
+                    </div>
+                </div>
             </div>
         </section>
+        
+        
+        
 
         <section id="education">
             <div class="container">
                 <h2>Education</h2>
-                <p>Bachelor of Science in Computer and Information Science</p>
-                <p>University Of North Alabama, AL</p>
-                <p>Expected Graduation Date: May, 2024</p>
-                <p>GPA: 3.94/4 (Dean’s List, all semesters)</p>
+                <div class="timeline1">
+                    <div class="timeline-block">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Bachelor of Science in Computer and Information Science</h3>
+                            <p>University Of North Alabama, AL</p>
+                            <p>Expected Graduation Date: May 2024</p>
+                            <div class="additional-info">
+                                <p>GPA: 3.94/4 (Dean’s List, all semesters)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        
+        
     </main>
 
     <footer>

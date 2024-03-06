@@ -414,12 +414,12 @@ section#projects .container {
   
   /* Left title for the right side */
   .entry2 .title{
-    right: 108%; /* Position outside the box on the right side */
+    right: 115%; /* Position outside the box on the right side */
   }
   
   /* Right title for the left side */
   .entry1 .title {
-    left: 108%; /* Position outside the box on the left side */
+    left: 115%; /* Position outside the box on the left side */
   }
   
   .content h3 {
@@ -451,28 +451,37 @@ section#projects .container {
 .entry1::before {
     content: '';
     position: absolute;
-    top: 17px;
+    top: 6px;
     left: 101%;
     transform: translate(30%, 30%);
-    height: 14px;
-    width: 14px;
-    border: 3px solid #fff; /* Border color */
-    background-color: #333; /* Dot color */
+    height: 40px;
+    width: 40px;
+    border: 3px solid rgb(255, 255, 255); /* Border color */
+    background-color: #eceaea; /* Dot color */
     border-radius: 50%;
+    background-image: url('briefcase.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .entry2::before {
     content: '';
     position: absolute;
-    top: 17px;
-    left: -6%;
+    top: 4px;
+    left: -12%;
     transform: translate(30%, 30%);
-    height: 14px;
-    width: 14px;
-    border: 3px solid #fff; /* Border color */
-    background-color: #333; /* Dot color */
-    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: 3px solid rgb(255, 255, 255); /* Border color */
+    background-color: #eceaea; /* Dot color */
+    border-radius: 70%;
+    background-image: url('briefcase.png'); /* Replace with the URL of the downloaded icon */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
+
 
   .arrow-right, .arrow-left {
     position: absolute;
@@ -484,14 +493,14 @@ section#projects .container {
   
   /* Right-pointing arrow, for the entry on the right */
   .arrow-right {
-    right: -2%; /* Position the arrow to the right of the box */
-    border-width: 10px 0 10px 20px; /* Adjust size of arrow */
+    right: -1.5%; /* Position the arrow to the right of the box */
+    border-width: 5px 0 5px 10px; /* Adjust size of arrow */
     border-color: transparent transparent transparent #ffffff; /* Left border is white, others are transparent */
   }
   
   /* Left-pointing arrow, for the entry on the left */
   .arrow-left {
-    left: -2%; /* Position the arrow to the left of the box */
-    border-width: 10px 20px 10px 0; /* Adjust size of arrow */
+    left: -1.5%; /* Position the arrow to the left of the box */
+    border-width: 5px 10px 5px 0; /* Adjust size of arrow */
     border-color: transparent #ffffff transparent transparent; /* Right border is white, others are transparent */
   }

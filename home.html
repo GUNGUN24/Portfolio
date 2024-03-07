@@ -65,6 +65,32 @@
         resetObserver.observe(document.querySelector('.project-card:last-child'));
     });
 
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const navItems = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('section');
+        const offsetThreshold = 200; // You can adjust this value as needed
+
+        window.addEventListener('scroll', () => {
+        let fromTop = window.scrollY;
+
+        navItems.forEach(link => {
+            let section = document.querySelector(link.hash);
+
+            // Check if the section is at the top of the window, considering the threshold
+            if (
+            section.offsetTop - offsetThreshold <= fromTop &&
+            section.offsetTop + section.offsetHeight - offsetThreshold > fromTop
+            ) {
+            link.classList.add('nav-active');
+            } else {
+            link.classList.remove('nav-active');
+            }
+        });
+        });
+    });
+
+
 </script>
 <body>
     
@@ -75,8 +101,8 @@
               <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
               </ul>
@@ -93,13 +119,13 @@
             <div class="container">
                 <div class = "bg">
                 <div class="about-left">
-                    <div class="profile-image">
-                        <img src="me1.jpg" alt="Profile Image">
-                        <div class="social-icons">
-                            <a href="#" class="fab fa-linkedin"></a>
-                            <a href="#" class="fab fa-github"></a>
-                        </div>
-                    </div>
+                        <div class="profile-image">
+                            <img src="me1.jpg" alt="Profile Image">
+                            <div class="social-icons">
+                                <a href="#" class="fab fa-linkedin"></a>
+                                <a href="#" class="fab fa-github"></a>
+                            </div>
+                        </div>                  
                 </div>
                 <div class="about-right">
                     <h1>Hello, I'm Gungun.</h1>
@@ -333,11 +359,37 @@
             </div>
         </section>
         
+        <section id="contact">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p>Feel free to reach out anytime. I'm just one click away!</p>
+                <div class="contact-options">
+                    <a href="mailto:gungundh24@gmail.com" class="contact-option email-link">
+                        <div class="icon-container">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="contact-text">Email Me</span>
+                    </a>
+                </div>
+            </div>
+            <div class="pattern-background"></div>
+        </section>
+               
         
     </main>
 
     <footer>
+        <div class="footer-container">
+            <div class="social-icons-footer">
+                <a href="#" class="fab fa-linkedin-in"></a>
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-twitter"></a>
+            </div>
+            <p>&copy; 2024 Gungun Gungun. All rights reserved.</p>
+        </div>
     </footer>
+    
+    
 </body>
 
 </html>

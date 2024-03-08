@@ -39,6 +39,7 @@ header {
   justify-content: space-between;
   border-radius: 20px 20px 20px 20px; /* Rounded corners */
   z-index: 1000; /* Ensure the header appears above other content */
+  backdrop-filter: blur(42px);
 }
 
 .bg{

@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
+html {
+  scroll-behavior: smooth;
+}
 
 body,
 h1,
@@ -680,21 +683,16 @@ section#projects .container {
 }
 
 .timeline-icon {
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: #4a90e2;
     color: white;
     border-radius: 50%;
     padding: 15px;
     z-index: 100;
-    margin-top: 20px;
 }
 
 .timeline-content {
     background-color: white;
-    padding: 50px;
+    padding: 30px 50px;
     border-radius: 4px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     transition: all 0.3s ease, box-shadow 0.3s ease;
@@ -703,10 +701,13 @@ section#projects .container {
     cursor: pointer;
     overflow: hidden;
     min-height: 150px; /* To ensure all blocks are the same height */
+    display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .timeline-content h3 {
-    margin-top: 30px;
+    margin-top: 12px;
     font-size: 1.6em;
     color: #333;
 }
@@ -718,6 +719,7 @@ section#projects .container {
     background-color: #eef1f5;
     padding: 0 20px;
     transition: all 0.3 ease-in-out;
+    width: 100%;
 }
 
 .timeline-content:hover {

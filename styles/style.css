@@ -890,4 +890,31 @@ section#projects .container {
   }
   
 
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
   
+  /* Adjustments for mobile phones */
+  @media (max-width: 480px) {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .about-left {
+      width: 30%; /* Original width */
+    }
+    .about-right {
+      width: 65%; /* Original width */
+    }
+  }
+
+  @media (min-width: 768px) {
+    header {
+      position: fixed;
+      padding: 10px 20px;
+    }
+  }

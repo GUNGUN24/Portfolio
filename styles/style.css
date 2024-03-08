@@ -237,6 +237,7 @@ nav ul li a.nav-active {
 
 .social-icons a:hover {
   color: #0a5996; /* Social icons hover color */
+  
 }
 
 /* Clear floats to ensure proper layout */

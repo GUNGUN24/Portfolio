@@ -237,7 +237,6 @@ nav ul li a.nav-active {
 
 .social-icons a:hover {
   color: #0a5996; /* Social icons hover color */
-  
 }
 
 /* Clear floats to ensure proper layout */
@@ -330,7 +329,7 @@ section#projects .container {
     margin-bottom: 20px;
     display: flex; /* Added to allow for image and content side-by-side */
     overflow: hidden; /* Hide overflow to ensure rectangular shape */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add transitions */
+    transition: all 0.3s ease-in-out;
     position: relative; /* Added for image positioning */
 }
 
@@ -343,6 +342,7 @@ section#projects .container {
     background-color: #6167db;
     background: linear-gradient(#6276d5, #c5c9f9);
     transform: scale(1.10); /* Zoom in card slightly on hover */
+    transition: all 0.3s ease-in-out;
 }
 
 .project-details {
@@ -563,7 +563,7 @@ section#projects .container {
   }
 
   .project-card {
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .project-card.focus {

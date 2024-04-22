@@ -890,31 +890,58 @@ section#projects .container {
   }
   
 
-  @media (max-width: 768px) {
-    html {
-      font-size: 14px;
-    }
-  }
-  
-  /* Adjustments for mobile phones */
-  @media (max-width: 480px) {
-    html {
-      font-size: 12px;
-    }
+  /* Make the nav bar responsive */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
   }
 
-  @media (min-width: 768px) {
-    .about-left {
-      width: 30%; /* Original width */
-    }
-    .about-right {
-      width: 65%; /* Original width */
-    }
+  nav ul {
+    padding: 0;
   }
 
-  @media (min-width: 768px) {
-    header {
-      position: fixed;
-      padding: 10px 20px;
-    }
+  nav ul li {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
+}
+
+/* Make cards responsive */
+@media screen and (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+    width: 90%; /* Adjust the width on smaller screens */
+    margin: 0 auto; /* Center the card */
+    margin-bottom: 20px;
+  }
+
+  .project-card img {
+    width: 100%; /* Make the image take full width of the card */
+    margin-bottom: 15px;
+  }
+
+  .project-details {
+    padding: 15px;
+  }
+}
+
+/* Improve responsiveness for smaller devices */
+@media screen and (max-width: 480px) {
+  .skill {
+    flex: 0 1 100%; /* Make skill blocks take full width */
+  }
+
+  .about-left, .about-right {
+    width: 100%; /* Full width for about section parts */
+    text-align: center; /* Center content for smaller screens */
+    margin-top: 20px;
+  }
+
+  .about-left img {
+    margin: 0 auto; /* Center the image */
+  }
+}
